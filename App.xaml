@@ -10,8 +10,10 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Color x:Key="headingFont">#16F4D0</Color>
-            
+            <Color x:Key="headingFontColor">#16F4D0</Color>
+            <Color x:Key="subHeadingFontColor">#7F7B8C</Color>
+            <Color x:Key="fontColor">#B5BAD0</Color>
+            <Color x:Key="containerColor">#413C58</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
