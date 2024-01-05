@@ -200,21 +200,24 @@
                                        HeightRequest="50"
                                        HorizontalOptions="CenterAndExpand"
                                        Spacing="-5">
-                    
-                    <Button Text="-"
+
+                    <Button x:Name="btnMinus" 
+                            Text="-"
                             TextColor="Red"
                             FontSize="Medium"
                             WidthRequest="60" 
                             Background="{StaticResource headingFontColor}"
                             ZIndex="-1"/>
 
-                    <Entry Text="1"
+                    <Entry x:Name="entPeopleNumber"
+                           Text="1"
                            TextColor="Black"
                            BackgroundColor="White"
                            HorizontalTextAlignment="Center"
                            FontSize="Medium"/>
 
-                    <Button Text="+"
+                    <Button x:Name="btnPlus" 
+                            Text="+"
                             TextColor="Green"
                             FontSize="Medium"
                             WidthRequest="60" 
