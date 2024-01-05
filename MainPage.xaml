@@ -9,6 +9,7 @@
                 <RowDefinition Height=".3*"></RowDefinition>
                 <RowDefinition Height=".7*"></RowDefinition>
             </Grid.RowDefinitions>
+
             <!-- Top Content -->
             <Frame 
                    Padding="10"
@@ -17,8 +18,8 @@
                    BorderColor="Black">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height=".1*"></RowDefinition>
-                        <RowDefinition Height=".9*"></RowDefinition>
+                        <RowDefinition Height=".2*"></RowDefinition>
+                        <RowDefinition Height=".8*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -35,8 +36,10 @@
                            TextColor="{StaticResource headingFontColor}"
                            FontSize="Small"
                            FontAttributes="Bold"
-                           HeightRequest="30"
-                           HorizontalOptions="CenterAndExpand"/>
+                           HeightRequest="25"
+                           Margin="0, 0, 0, 10"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="EndAndExpand"/>
 
                     <!-- Amounts Summary -->
                     <Label x:Name="lblTotal" Grid.Row="1"
@@ -82,6 +85,146 @@
                     </VerticalStackLayout>
                 </Grid>
             </Frame>
+            <Frame Grid.Row="1" 
+                   Padding="10"
+                   HeightRequest="500"
+                   BackgroundColor="{StaticResource containerColor}"
+                   BorderColor="Black">
+
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="lblHeadingS" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Text="CALCULATIONS"
+                       TextColor="{StaticResource headingFontColor}"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HeightRequest="60"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="EndAndExpand"/>
+                
+                <Label x:Name="lblEnterBill"
+                       Grid.Row="1"
+                       VerticalOptions="CenterAndExpand"
+                       Text="Your bill:"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"/>
+
+                <Label x:Name="lblEnterBillSymbol"
+                       Grid.Row="1"
+                       Text="£"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="EndAndExpand"
+                       Padding="0, 0, 1, 0"/>
+
+                <Entry x:Name="entEnterbill"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Keyboard="Numeric"
+                       Text="0.0"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"
+                       BackgroundColor="{StaticResource containerColor}"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Label x:Name="lblChooseTip"
+                       Grid.Row="2"
+                       VerticalOptions="CenterAndExpand"
+                       Text="Tip:"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"/>
+
+                <HorizontalStackLayout Grid.Row="2"
+                                       Grid.Column="1"
+                                       HeightRequest="70"
+                                       HorizontalOptions="CenterAndExpand"
+                                       Spacing="10">
+
+                    <Button Text="10%"
+                            TextColor="{StaticResource containerColor}"
+                            WidthRequest="60" 
+                            Background="{StaticResource headingFontColor}"/>
+
+                    <Button Text="15%" 
+                            TextColor="{StaticResource containerColor}"
+                            WidthRequest="60" 
+                            Background="{StaticResource headingFontColor}"/>
+
+                    <Button Text="20%"
+                            TextColor="{StaticResource containerColor}"
+                            WidthRequest="60" 
+                            Background="{StaticResource headingFontColor}"/>
+                    
+                </HorizontalStackLayout>
+
+                <Label x:Name="lblTipPercent"
+                       Grid.Row="3"
+                       Text="Tip: 0%"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Slider x:Name="sldrTipPercent"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        VerticalOptions="CenterAndExpand"
+                        Minimum="0"
+                        Maximum="50"
+                        MinimumTrackColor="{StaticResource headingFontColor}"
+                        ThumbColor="{StaticResource headingFontColor}"/>
+
+                <Label x:Name="lblSplitTotal"
+                       Grid.Row="4"
+                       Text="Split total:"
+                       TextColor="{StaticResource fontColor}"
+                       FontSize="Medium"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <HorizontalStackLayout Grid.Row="4"
+                                       Grid.Column="1"
+                                       HeightRequest="50"
+                                       HorizontalOptions="CenterAndExpand"
+                                       Spacing="-5">
+                    
+                    <Button Text="-"
+                            TextColor="Red"
+                            FontSize="Medium"
+                            WidthRequest="60" 
+                            Background="{StaticResource headingFontColor}"
+                            ZIndex="-1"/>
+
+                    <Entry Text="1"
+                           TextColor="Black"
+                           BackgroundColor="White"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"/>
+
+                    <Button Text="+"
+                            TextColor="Green"
+                            FontSize="Medium"
+                            WidthRequest="60" 
+                            Background="{StaticResource headingFontColor}"
+                            ZIndex="-1"/>
+
+                </HorizontalStackLayout>
+                
+            </Grid>
+        </Frame>
         </Grid>
 
 </ContentPage>
