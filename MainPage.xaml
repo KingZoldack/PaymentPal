@@ -75,7 +75,7 @@
                                Text="TIP"
                                TextColor="{StaticResource fontColor}"
                                FontSize="Medium"
-                               Margin="0, 20, 0, 0"/>
+                               Margin="0, 18, 0, 0"/>
                         
                         <Label x:Name="lblTipAmount" 
                                Text="£5.00"
@@ -140,7 +140,8 @@
                        TextColor="{StaticResource fontColor}"
                        FontSize="Medium"
                        BackgroundColor="{StaticResource containerColor}"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       Completed="entEnterbill_Completed"/>
 
                 <Label x:Name="lblChooseTip"
                        Grid.Row="2"
@@ -155,17 +156,23 @@
                                        HorizontalOptions="CenterAndExpand"
                                        Spacing="10">
 
-                    <Button Text="10%"
+                    <Button x:Name="btnTen"
+                            Clicked="TipButton_Clicked"
+                            Text="10%"
                             TextColor="{StaticResource containerColor}"
                             WidthRequest="60" 
                             Background="{StaticResource headingFontColor}"/>
 
-                    <Button Text="15%" 
+                    <Button x:Name="btnFifteen"
+                            Clicked="TipButton_Clicked"
+                            Text="15%" 
                             TextColor="{StaticResource containerColor}"
                             WidthRequest="60" 
                             Background="{StaticResource headingFontColor}"/>
 
-                    <Button Text="20%"
+                    <Button x:Name="btnTwenty" 
+                            Clicked="TipButton_Clicked"
+                            Text="20%"
                             TextColor="{StaticResource containerColor}"
                             WidthRequest="60" 
                             Background="{StaticResource headingFontColor}"/>
@@ -185,6 +192,7 @@
                         VerticalOptions="CenterAndExpand"
                         Minimum="0"
                         Maximum="50"
+                        ValueChanged="sldrTipPercent_ValueChanged"
                         MinimumTrackColor="{StaticResource headingFontColor}"
                         ThumbColor="{StaticResource headingFontColor}"/>
 
@@ -202,6 +210,7 @@
                                        Spacing="-5">
 
                     <Button x:Name="btnMinus" 
+                            Clicked="btnMinus_Clicked"
                             Text="-"
                             TextColor="Red"
                             FontSize="Medium"
@@ -210,13 +219,16 @@
                             ZIndex="-1"/>
 
                     <Entry x:Name="entPeopleNumber"
+                           Keyboard="Numeric"
                            Text="1"
                            TextColor="Black"
+                           Completed="entPeopleNumber_Completed"
                            BackgroundColor="White"
                            HorizontalTextAlignment="Center"
                            FontSize="Medium"/>
 
-                    <Button x:Name="btnPlus" 
+                    <Button x:Name="btnPlus"
+                            Clicked="btnPlus_Clicked"
                             Text="+"
                             TextColor="Green"
                             FontSize="Medium"
